@@ -14,20 +14,31 @@
  * }
  */
 class Solution {
-    List <Integer> ans=new ArrayList<>();
-    
+    List<Integer> ans=new ArrayList<>();
     public List<Integer> rightSideView(TreeNode root) {
-       preorder(root,1);
-        return ans;
-    }
-    public void preorder(TreeNode root, int level)
-    {
+        Queue<TreeNode> q=new LinkedList<>();
         if(root==null)
-            return;
-        if(ans.size()==level-1)
-            ans.add(root.val);
-        preorder(root.right,level+1);
-
-        preorder(root.left,level+1);
+            return ans;
+        q.offer(root);
+        while(!q.isEmpty())
+        {
+            int size=q.size();
+            for(int i=0;i<size;i++)
+            {
+                TreeNode temp=q.poll();
+                if(i==size-1)
+                {
+                    ans.add(temp.val);
+                    
+                }
+                if(temp.left!=null)
+                    q.offer(temp.left);
+                if(temp.right!=null)
+                    q.offer(temp.right);
+            }
+            
+        }
+        return ans;
+        
     }
 }
