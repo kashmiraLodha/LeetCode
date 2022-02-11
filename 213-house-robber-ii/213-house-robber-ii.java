@@ -2,8 +2,7 @@ class Solution {
     public int rob(int[] nums) {
         if(nums.length==1)
             return nums[0];
-        //if(nums.length==2)
-            //return Math.max(nums[])
+       
         
         int[] dp=new int[nums.length];
         Arrays.fill(dp,-1);
