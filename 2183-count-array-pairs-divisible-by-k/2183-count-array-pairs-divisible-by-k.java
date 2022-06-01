@@ -6,7 +6,7 @@ class Solution {
             int gcd1=gcd(val,k);
             
             for(int gcd2:hm.keySet()){
-                if((long)gcd1*gcd2 % k==0){
+                if(((long)gcd1*gcd2) % k==0){
                     ans+=hm.get(gcd2);
                 }
             }
