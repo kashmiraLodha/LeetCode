@@ -7,16 +7,16 @@ class Solution {
         k=k%n;
         int i = n-k;
         int j = n-1;
-        while(i<j){
+        while(i<=j){
             int temp = arr[i];
             arr[i] = arr[j];
             arr[j] = temp;
             i++;
             j--;
         }
-        int r = n-k-1;
+         int r = n-k-1;
         int s = 0;
-        while(s<r){
+        while(s<=r){
             int temp = arr[r];
             arr[r] = arr[s];
             arr[s] = temp;
@@ -25,13 +25,13 @@ class Solution {
         }
         int p = 0;
         int q = n-1;
-        while(p<q){
+        while(p<=q){
             int temp = arr[p];
             arr[p] = arr[q];
             arr[q] = temp;
             p++;
             q--;
         }
-         
+        
     }
 }
